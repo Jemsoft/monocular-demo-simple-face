@@ -3,9 +3,6 @@ import monocular
 import json
 import imghdr
 
-
-
-
 # Fill in your own App ID and secret here:
 monocular.initialize({
     'client_id':'jemsonsAppId',
