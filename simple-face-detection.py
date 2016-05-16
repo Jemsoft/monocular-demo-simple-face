@@ -9,6 +9,8 @@ monocular.initialize({
     'client_secret':'jemsonsAppSecret'
 })
 
+valid_types = ['png', 'jpeg', 'bmp']
+
 invalid = True
 while invalid:
     try:
