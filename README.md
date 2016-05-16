@@ -44,6 +44,8 @@ monocular.initialize({
 Now we need to get a file from the computer, we will do this by creating a loop which will ask the user to type in the path to a file and will only stop once we get a valid file path. Here we use the `imghdr` module to check that the image type is compatible with Monocular.
 
 ```
+valid_types = ['png', 'jpeg', 'bmp']
+
 invalid = True
 while invalid:
     try:
