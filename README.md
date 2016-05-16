@@ -14,6 +14,10 @@ Next you need to setup the Python package manager [pip](https://pip.pypa.io/en/s
 
 `pip install monocular`
 
+If you have previously installed, check for upgrades using:
+
+`pip install --upgrade monocular`
+
 
 ### Development
 
