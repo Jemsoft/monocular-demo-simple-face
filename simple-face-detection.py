@@ -15,7 +15,10 @@ invalid = True
 while invalid:
     try:
         # Get the path from user input
+        # Python 2.x
         path = raw_input('Enter image path:')
+        # Uncomment this line for Python 3.x
+        # path = input('Enter image path:')
         # Validate Image
         if imghdr.what(path) in valid_types:
             invalid = False
@@ -41,3 +44,5 @@ for box in response:
         draw.point([landmark[0], landmark[1]-1], fill='#00ffff')
         draw.point([landmark[0], landmark[1]], fill='#00ff00')
         i = i + 1
+
+img.show()
