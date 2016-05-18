@@ -18,6 +18,8 @@ If you have previously installed, check for upgrades using:
 
 `pip install --upgrade monocular`
 
+If you are using Python 3.x you may need to use the `pip3` instead of `pip`.
+
 
 ### Development
 
@@ -45,7 +47,7 @@ monocular.initialize({
     'client_secret':'jemsonsAppSecret'
 })
 ```
-Now we need to get a file from the computer, we will do this by creating a loop which will ask the user to type in the path to a file and will only stop once we get a valid file path. Here we use the `imghdr` module to check that the image type is compatible with Monocular.
+Now we need to get a file from the computer, we will do this by creating a loop which will ask the user to type in the path to a file and will only stop once we get a valid file path. Here we use the `imghdr` module to check that the image type is compatible with Monocular. If you are using Python 3.x `raw_input` has been replaced with `input`, simply comment out `path = raw_input('Enter image path:')` and uncomment `path = input('Enter image path:')`
 
 ```
 valid_types = ['png', 'jpeg', 'bmp']
@@ -53,8 +55,11 @@ valid_types = ['png', 'jpeg', 'bmp']
 invalid = True
 while invalid:
     try:
-        # Get the path from user input
+       # Get the path from user input
+        # Python 2.x Comment out this line if you are using Python 3.x
         path = raw_input('Enter image path:')
+        # Uncomment this line for Python 3.x
+        # path = input('Enter image path:')
         # Validate Image
         if imghdr.what(path) in valid_types:
             invalid = False
@@ -88,6 +93,8 @@ for box in response:
         draw.point([landmark[0], landmark[1]-1], fill='#00ffff')
         draw.point([landmark[0], landmark[1]], fill='#00ff00')
         i = i + 1
+        
+img.show()
 ```
 
 The face detection app is now completed!
